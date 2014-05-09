@@ -13,8 +13,10 @@ IssuesController = function ($scope, $timeout, $http) {
 		$http({method: 'GET', url: 'https://api.github.com/repos/yourpalal/polling-thing/issues'})
 			.success(function(data, status, headers, config) {
 				$scope.issues = data;
+				$scope.setTimeout();
 			})
 			.error(function(data, status, headers, config) {
+				$scope.setTimeout();
 			})
 	};
 	$scope.setTimeout();
