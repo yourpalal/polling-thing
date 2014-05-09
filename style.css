@@ -1,0 +1,29 @@
+h1 {
+	width: 100%;
+	text-align: center;
+
+	color: white;
+	background-color: #BFBFBF;
+}
+
+.author {
+	display: block;
+	font-size: 50%;
+}
+
+.body {
+	border-radius: 10px;
+	background-color: #BFBFBF;
+	border: thin solid #AFAFAF;
+	max-width: 30em;
+}
+
+.labels {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.labels li {
+	display: inline;
+}

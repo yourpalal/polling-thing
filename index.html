@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+	<script src="issues.js"></script>
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body ng-controller="IssuesController">
+	<h1>Issues for <a href="https://github.com/yourpalal/polling-thing/">yourpalal/polling-thing</a></h1>
+	<article ng-repeat="issue in issues">
+		<header>
+			<h2><a ng-href="{{issue.html_url}}">{{issue.title}}</a>
+				<span class="author">by <a ng-href="{{issue.user.html_url}}">
+						{{issue.user.login}}
+						<img height="30" width="30" ng-src="{{issue.user.avatar_url}}" />
+				</a></span>
+			</h2>
+
+			<div class="state">This ticket is {{issue.state}}</div>
+			<span> <ul ng-if="issue.labels" class="labels">
+				<li ng-repeat="label in issue.labels" ng-style="{color: '#' + label.color}">
+					{{label.name}}
+				</li>
+			</ul></span>
+		</header>
+
+		<section class="body">
+			{{issue.body}}
+		</section>
+	</article>
+</body>
+</html>
+
+ 
